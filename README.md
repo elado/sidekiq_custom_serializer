@@ -34,17 +34,20 @@ This Gem supplies ActiveRecord, classes and modules serialization and deserializ
 
 1. Instance method for serialization:
 
-	def sidekiq_serialize
-	  "SIDEKIQ@#{self.class.name}@#{self.id}"
-	end
-
+```
+def sidekiq_serialize
+  "SIDEKIQ@#{self.class.name}@#{self.id}"
+end
+```
 
 2. Class method for deserialization:
 
-	def self.sidekiq_deserialize(string)
-	  where(id: string.to_i).first
-	end
+```
+def self.sidekiq_deserialize(string)
+  where(id: string.to_i).first
+end
+```
 
-Every argument in Redis with SIDEKIQ@ prefix will be inspected. The string after the first `@` is the class name, and then the ID or any other parameter, that will be passed to the `sidekiq_deserialize(string)` method.
+Every argument in Redis with `SIDEKIQ@` prefix will be inspected. The string after the first `@` is the class name, and then the ID or any other parameter, that will be passed to the `sidekiq_deserialize(string)` method.
 
 
