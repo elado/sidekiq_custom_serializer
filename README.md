@@ -32,7 +32,7 @@ Instead of creating worker classes for each background job and grow your app cod
 
 This Gem supplies ActiveRecord, classes and modules serialization and deserialization out of the box. For other things, you can define two methods (below is the implementation for ActiveRecord):
 
-1. Instance method for serialization:
+1) Instance method for serialization:
 
 ```
 def sidekiq_serialize
@@ -40,7 +40,7 @@ def sidekiq_serialize
 end
 ```
 
-2. Class method for deserialization:
+2) Class method for deserialization:
 
 ```
 def self.sidekiq_deserialize(string)
