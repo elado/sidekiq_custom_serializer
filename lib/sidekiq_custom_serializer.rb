@@ -1,0 +1,6 @@
+require "sidekiq_custom_serializer/version"
+require "sidekiq_custom_serializer/extensions/args_serializer"
+require "sidekiq_custom_serializer/extensions/generic_proxy"
+require "sidekiq_custom_serializer/extensions/active_record"
+require "sidekiq_custom_serializer/extensions/class_methods"
+require "sidekiq_custom_serializer/extensions/action_mailer"
